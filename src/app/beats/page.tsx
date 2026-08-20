@@ -1,0 +1,2 @@
+import { TopBar } from '@/components/AppShell'; import { BeatCard } from '@/components/Marketplace'; import { beats } from '@/lib/mock-data';
+export default function Beats(){return <><TopBar title="Beats" subtitle="Producer storefront foundations for leases, stems, exclusives, and custom licenses."/><div className="grid gap-4 lg:grid-cols-2">{beats.map(b=><BeatCard key={b.id} item={b}/>)}</div></>}

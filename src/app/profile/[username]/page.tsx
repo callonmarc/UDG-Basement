@@ -1,0 +1,2 @@
+import { ProfileHeader } from '@/components/Profile'; import { PostCard } from '@/components/Social'; import { posts, users } from '@/lib/mock-data';
+export default function ProfilePage({params}:{params:{username:string}}){const user=users.find(u=>u.username===params.username)||users[0];return <div className="space-y-4"><ProfileHeader user={user}/>{posts.filter(p=>p.userId===user.id).map(p=><PostCard key={p.id} post={p}/>)}</div>}
