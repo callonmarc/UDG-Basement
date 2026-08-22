@@ -1,16 +1,40 @@
 @config "../../tailwind.config.ts";
 @import "tailwindcss";
 
-:root {
-  color-scheme: dark;
-}
+:root { color-scheme: dark; }
 
+* { box-sizing: border-box; }
+html { background: #08090b; }
 body {
-  background: #07080d;
-  color: #f7f7fb;
+  min-width: 320px;
+  margin: 0;
+  background: #08090b;
+  color: #f4f2ee;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; }
+button, a, input { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+img { display: block; max-width: 100%; }
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid #c7ff5a;
+  outline-offset: 3px;
 }
 
-.glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.035));
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.app-background { background: radial-gradient(ellipse 75% 42% at 50% -18%, rgba(125, 75, 185, .14), transparent 72%), #08090b; }
+.surface { background: #111216; border: 1px solid #292b31; box-shadow: 0 12px 32px rgba(0,0,0,.18); }
+.surface-raised { background: #16171c; border: 1px solid #30323a; }
+.muted-surface { background: #0d0e11; border: 1px solid #25262c; }
+.glass { background: #111216; border: 1px solid #292b31; box-shadow: 0 12px 32px rgba(0,0,0,.18); }
+.accent-button { background: #c7ff5a; color: #101207; box-shadow: 0 7px 20px rgba(199,255,90,.13); }
+.accent-button:hover { background: #d4ff85; }
+.icon-button { display:grid; height:2.75rem; width:2.75rem; place-items:center; border:1px solid #30323a; border-radius:.75rem; color:#d8d6d1; background:#15161a; }
+.icon-button:hover { border-color:#545762; background:#1b1c21; color:#fff; }
+.action-button { display:inline-flex; min-height:2.75rem; align-items:center; justify-content:center; gap:.5rem; border:1px solid #34363e; border-radius:.65rem; padding:.55rem .9rem; color:#dedcd6; background:#18191e; font-size:.875rem; font-weight:600; }
+.action-button:hover { border-color:#565963; background:#202127; }
+.eyebrow { color:#a4a49e; font-size:.7rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+
+@media (max-width: 767px) {
+  .mobile-safe-bottom { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
 }
